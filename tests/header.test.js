@@ -44,6 +44,6 @@ test("when sign in. show logout button", async () => {
 
 		expect(text).toBe("Logout");
 	} catch (e) {
-		await page.reload();
+		await page.reload("localhost:3000");
 	}
 });

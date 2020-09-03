@@ -7,7 +7,7 @@ beforeEach(async () => {
 	page = await Page.build();
 	page.setDefaultNavigationTimeout(0);
 
-	await page.goto("localhost:3000");
+	await page.goto("http://localhost:3000");
 });
 
 afterEach(async () => {
@@ -25,7 +25,7 @@ describe("when login in", async () => {
 			const label = await page.getContentsOf(".title label");
 			expect(label).toBe("Blog Title");
 		} catch (e) {
-			await page.reload("localhost:3000/blogs");
+			await page.reload("http://localhost:3000/blogs");
 		}
 	});
 
@@ -55,7 +55,7 @@ describe("when login in", async () => {
 				expect(title).toEqual("my title");
 				expect(content).toEqual("my content");
 			} catch (e) {
-				await page.reload("localhost:3000/blogs/new");
+				await page.reload("http://localhost:3000/blogs/new");
 			}
 		});
 	});
@@ -75,7 +75,7 @@ describe("when login in", async () => {
 				expect(titleError).toEqual("You must provide a value");
 				expect(contentError).toEqual("You must provide a value");
 			} catch (e) {
-				await page.reload("localhost:3000/blogs/new");
+				await page.reload("http://localhost:3000/blogs/new");
 			}
 		});
 	});

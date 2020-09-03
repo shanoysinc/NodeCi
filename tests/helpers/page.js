@@ -4,7 +4,7 @@ const userFactory = require("../factory/userFactory");
 class CustomPage {
 	static async build() {
 		const browser = await puppeteer.launch({
-			headless: false,
+			headless: true,
 			args: ["--no-sandbox"], // make ci testing fasting
 		});
 		const page = await browser.newPage();

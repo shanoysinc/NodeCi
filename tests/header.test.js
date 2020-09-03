@@ -1,5 +1,4 @@
-jest.setTimeout(50000);
-
+jest.setTimeout(100000);
 const Page = require("./helpers/page.js");
 
 let page;
@@ -44,6 +43,6 @@ test("when sign in. show logout button", async () => {
 
 		expect(text).toBe("Logout");
 	} catch (e) {
-		await page.reload("localhost:3000");
+		await page.reload();
 	}
 });

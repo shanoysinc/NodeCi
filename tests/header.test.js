@@ -5,8 +5,8 @@ let page;
 
 beforeEach(async () => {
 	page = await Page.build();
-	page.setDefaultNavigationTimeout(0);
-	await page.goto("https://localhost:3000");
+	// page.setDefaultNavigationTimeout(0);
+	await page.goto("http://localhost:3000");
 });
 
 afterEach(async () => {
@@ -19,7 +19,7 @@ test("Header has the correct logo text", async () => {
 		const text = await page.getContentsOf("a.brand-logo");
 		expect(text).toEqual("Blogster");
 	} catch (e) {
-		await page.reload("https://localhost:3000");
+		await page.reload("http://localhost:3000");
 	}
 });
 
@@ -29,7 +29,7 @@ test("clicking login start oauth flow ", async () => {
 		const url = await page.url();
 		expect(url).toMatch("https://accounts.google.com/o/oauth2");
 	} catch (e) {
-		await page.reload("https://localhost:3000");
+		await page.reload("http://localhost:3000");
 	}
 });
 

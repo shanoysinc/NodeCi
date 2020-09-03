@@ -16,6 +16,8 @@ afterEach(async () => {
 
 describe("when login in", async () => {
 	beforeEach(async () => {
+		jest.setTimeout(100000);
+
 		await page.login();
 		await page.click("a.btn-floating");
 	});
@@ -27,10 +29,12 @@ describe("when login in", async () => {
 		} catch (e) {
 			await page.reload("http://localhost:3000/blogs");
 		}
-	});
+	}, 100000);
 
 	describe("and using valid inputs", async () => {
 		beforeEach(async () => {
+			jest.setTimeout(100000);
+
 			await page.type(".title input", "my title");
 			await page.type(".content input", "my content");
 			await page.click("form button");
@@ -42,7 +46,7 @@ describe("when login in", async () => {
 			} catch (e) {
 				await page.reload("http://localhost:3000/blogs");
 			}
-		});
+		}, 100000);
 
 		test("submitting then saving adds blog to index page", async () => {
 			try {
@@ -62,6 +66,7 @@ describe("when login in", async () => {
 
 	describe("and using invalid inputs", async () => {
 		beforeEach(async () => {
+			jest.setTimeout(100000);
 			await page.click("form button");
 		});
 
@@ -77,7 +82,7 @@ describe("when login in", async () => {
 			} catch (e) {
 				await page.reload("http://localhost:3000/blogs/new");
 			}
-		});
+		}, 30000);
 	});
 });
 

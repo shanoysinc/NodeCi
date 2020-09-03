@@ -12,5 +12,5 @@ module.exports = {
 	googleClientSecret: "8mkniDQOqacXtlRD3gA4n2az",
 	mongoURI: "mongodb+srv://shanoy:shanoy1@cluster0.1b2rm.mongodb.net/test",
 	cookieKey: "123123123",
-	redisUrl: "redis://127.0.0.1:6379",
+	redisUrl: "redis://localhost:6379",
 };

@@ -6,6 +6,7 @@ let page;
 beforeEach(async () => {
 	page = await Page.build();
 	// page.setDefaultNavigationTimeout(0);
+	jest.setTimeout(100000);
 
 	await page.goto("http://localhost:3000");
 });

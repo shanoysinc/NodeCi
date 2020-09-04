@@ -1,11 +1,11 @@
-jest.setTimeout(100000);
+jest.setTimeout(40000);
 const Page = require("./helpers/page.js");
 
 let page;
 
 beforeEach(async () => {
 	page = await Page.build();
-	// page.setDefaultNavigationTimeout(0);
+	page.setDefaultNavigationTimeout(0);
 	await page.goto("http://localhost:3000/");
 });
 
